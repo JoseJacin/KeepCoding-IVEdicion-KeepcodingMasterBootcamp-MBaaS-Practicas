@@ -17,6 +17,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func addNewContainer(_ sender: Any) {
+        let containerRef = blobClient.containerReference(fromName: "ejemplo2")
+        containerRef.createContainerIfNotExists(with: .container, requestOptions: nil, operationContext: nil) { (error, noExists) in
+            // Si algo va mal
+            if let _ = error {
+                print("\(error?.localizedDescription)")
+                return
+            }
+            
+            // Si todo va bien
+            if noExists {
+                // Se refresca la información
+                self.readAllContainers()
+            }
+        }
+    }
+    
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                                 return
                                             }
                                             
-                                            // Si todo va bien
-                                            for item in (containersResults?.results)! {
-                                                print(item)
-                                                // Se añade al modelo el elemento que se acaba de extraer
-                                                self.model.append(item)
-                                            }
+                                            // Se añade al modelo el elemento que se acaba de extraer
+                                            self.model = (containersResults?.results)!
                                             
                                             // Se realiza la descarga en segundo plano
                                             DispatchQueue.main.async {
