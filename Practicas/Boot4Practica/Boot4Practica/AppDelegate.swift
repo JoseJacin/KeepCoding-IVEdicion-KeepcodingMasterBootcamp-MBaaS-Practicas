@@ -17,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Prueba rápida para comprobar que se accede a los objetos de Azure
-        // Se crea un cliente
-        let azsClient = AZSCloudBlobClient()
-        
         return true
     }
 
