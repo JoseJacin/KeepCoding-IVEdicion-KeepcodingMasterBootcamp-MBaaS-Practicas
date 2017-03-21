@@ -34,6 +34,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @IBAction func deleteContainer(_ sender: Any) {
+        
+    }
+    
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()

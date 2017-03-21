@@ -49,9 +49,15 @@
                                 <action selector="addNewContainer:" destination="BYZ-38-t0r" id="PYf-oZ-raS"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="done" systemItem="trash" id="RGd-bB-Tht">
+                            <connections>
+                                <action selector="deleteContainer:" destination="BYZ-38-t0r" id="zHL-hM-hGV"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="4ig-39-nYY"/>
                     <connections>
+                        <outlet property="deleteContainer" destination="RGd-bB-Tht" id="mFe-eJ-wGa"/>
                         <outlet property="tableView" destination="Wmh-nA-RzC" id="O6V-mm-hgI"/>
                     </connections>
                 </viewController>
