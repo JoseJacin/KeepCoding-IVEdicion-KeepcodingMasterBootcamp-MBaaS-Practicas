@@ -16,6 +16,7 @@ class ContainerBrowser: UIViewController, UITableViewDelegate, UITableViewDataSo
     var model: [AZSCloudBlockBlob]! = []
     
     @IBOutlet weak var tableView: UITableView!
+    
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,12 @@ class ContainerBrowser: UIViewController, UITableViewDelegate, UITableViewDataSo
         readAllBlobs(inContainer: nameCurrentContainer)
     }
     
+    //MARK: - Actions
+    @IBAction func uploadAction(_ sender: Any) {
+        uploadLocalBlob()
+    }
+    
+    //MARK: - Functions
     // Función que recupera todos los blob que tiene el container pasado por parámetro
     func readAllBlobs(inContainer current: String) {
         let container = blobClient.containerReference(fromName: current)
@@ -54,9 +61,7 @@ class ContainerBrowser: UIViewController, UITableViewDelegate, UITableViewDataSo
                                         }
                                         
                                         // Se recorren los elementos del results
-                                        for item in (results?.blobs)! {
-                                            print("\(item)")
-                                        }
+                                        self.model = results?.blobs as! [AZSCloudBlockBlob]
                                         
                                         // Se realiza la descarga en segundo plano
                                         DispatchQueue.main.async {
@@ -123,9 +128,14 @@ class ContainerBrowser: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    //MARK: - Actions
-    @IBAction func uploadAction(_ sender: Any) {
-        uploadLocalBlob()
+    // Función que elimina un blob del container indicado
+    func deleteBlob(blobLocal: AZSCloudBlockBlob) {
+        blobLocal.delete { (error) in
+            if let _ = error {
+                print("\(error?.localizedDescription)")
+                return
+            }
+        }
     }
 }
 
@@ -157,4 +167,21 @@ extension ContainerBrowser {
         return model.count
     }
     
+    // Función que activa el poder editar elementos de un tableView
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // Se consulta la acción ejecutada sobre la celda de la tabla
+        if editingStyle == .delete {
+            // Se indica que se activan las modificaciones
+            tableView.beginUpdates()
+            // Se elimina la celda de la tableView
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            // Se elimina el elemento del modelo
+            let item = model[indexPath.row] as AZSCloudBlockBlob
+            model.remove(at: indexPath.row)
+            // Se elimina del container
+            deleteBlob(blobLocal: item)
+            // Se indica que se desactiva la edición en la tableView
+            tableView.endUpdates()
+        }
+    }
 }
