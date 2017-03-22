@@ -14,6 +14,7 @@
 		DF6AF9D81E81CF4000A17A39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6AF9D61E81CF4000A17A39 /* LaunchScreen.storyboard */; };
 		DF6AF9E01E81D09600A17A39 /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF9DF1E81D09600A17A39 /* AZSClient.framework */; };
 		DF6AF9E31E81D0C700A17A39 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF9E21E81D0C700A17A39 /* libxml2.2.tbd */; };
+		DFD84D261E830E4D00371417 /* ContainerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD84D251E830E4D00371417 /* ContainerBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DF6AF9DF1E81D09600A17A39 /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
 		DF6AF9E21E81D0C700A17A39 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		DF6AF9E41E81D1CC00A17A39 /* Boot4Practica-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boot4Practica-Bridging-Header.h"; sourceTree = "<group>"; };
+		DFD84D251E830E4D00371417 /* ContainerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6AF9CD1E81CF4000A17A39 /* AppDelegate.swift */,
-				DF6AF9CF1E81CF4000A17A39 /* ViewController.swift */,
+				DFD84D241E830E1700371417 /* ViewControllers */,
 				DF6AF9D11E81CF4000A17A39 /* Main.storyboard */,
 				DF6AF9D41E81CF4000A17A39 /* Assets.xcassets */,
 				DF6AF9D61E81CF4000A17A39 /* LaunchScreen.storyboard */,
@@ -80,6 +82,15 @@
 				DF6AF9DF1E81D09600A17A39 /* AZSClient.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFD84D241E830E1700371417 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF6AF9CF1E81CF4000A17A39 /* ViewController.swift */,
+				DFD84D251E830E4D00371417 /* ContainerBrowser.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 			files = (
 				DF6AF9D01E81CF4000A17A39 /* ViewController.swift in Sources */,
 				DF6AF9CE1E81CF4000A17A39 /* AppDelegate.swift in Sources */,
+				DFD84D261E830E4D00371417 /* ContainerBrowser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +343,7 @@
 				DF6AF9DE1E81CF4000A17A39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

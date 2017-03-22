@@ -17,27 +17,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func addNewContainer(_ sender: Any) {
-        let containerRef = blobClient.containerReference(fromName: "ejemplo2")
-        containerRef.createContainerIfNotExists(with: .container, requestOptions: nil, operationContext: nil) { (error, noExists) in
-            // Si algo va mal
-            if let _ = error {
-                print("\(error?.localizedDescription)")
-                return
-            }
-            
-            // Si todo va bien
-            if noExists {
-                // Se refresca la información
-                self.readAllContainers()
-            }
-        }
-    }
-    
-    @IBAction func deleteContainer(_ sender: Any) {
-        
-    }
-    
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Se instancia la cuenta
             account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
             
-            // Se instancia el blobClient
+            // Se instancia el blobClient. Cliente que gestiona todos los Containers
             blobClient = account.getBlobClient()
             
             // Se leen todos los Containers
@@ -77,6 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         blobClient.listContainersSegmented(with: nil,
                                            prefix: nil,
                                            containerListingDetails: AZSContainerListingDetails.all,
+                                           // Con esto se indica que se retornen todos los elementos
                                            maxResults: -1,
                                            completionHandler: { (error, containersResults) in
                                             
@@ -87,13 +67,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                             }
                                             
                                             // Se añade al modelo el elemento que se acaba de extraer
-                                            self.model = (containersResults?.results)!
+                                            // En este momento se está machacando el contenido de model con lo recuperado
+                                            if let containersResults = containersResults {
+                                                self.model = containersResults.results
+                                            }
                                             
                                             // Se realiza la descarga en segundo plano
                                             DispatchQueue.main.async {
                                                 self.tableView.reloadData()
                                             }
         })
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Se comprueba el tipo de segue
+        if segue.identifier == "VerContainer" {
+            // Se instancia el ViewController
+            let vc = segue.destination as! ContainerBrowser
+            vc.blobClient = blobClient
+            vc.nameCurrentContainer = (sender as! AZSCloudBlobContainer).name
+        }
+    }
+    
+    //MARK: - Actions
+    @IBAction func addNewContainer(_ sender: Any) {
+        let containerRef = blobClient.containerReference(fromName: "ejemplo2")
+        containerRef.createContainerIfNotExists(with: .container, requestOptions: nil, operationContext: nil) { (error, noExists) in
+            // Si algo va mal
+            if let _ = error {
+                print("\(error?.localizedDescription)")
+                return
+            }
+            
+            // Si todo va bien
+            if noExists {
+                // Se refresca la información
+                self.readAllContainers()
+            }
+        }
     }
 }
 
@@ -107,9 +119,9 @@ extension ViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if model.isEmpty {
             return 0
-        } else {
-            return model.count
         }
+        
+        return model.count
     }
     
     // Función que indica la celda pulsada
@@ -122,5 +134,19 @@ extension ViewController {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Se obtiene la referencia al Container a consultar
+        let item = model[indexPath.row] as! AZSCloudBlobContainer
+        
+        // Se ejectua
+        performSegue(withIdentifier: "VerContainer", sender: item)
+    }
 }
+
+
+
+
+
+
 

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-nA-RzC">
-                                <rect key="frame" x="16" y="72" width="343" height="543"/>
+                                <rect key="frame" x="16" y="68" width="343" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ma0-Qj-mgO" id="roA-qh-pku">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -49,26 +49,68 @@
                                 <action selector="addNewContainer:" destination="BYZ-38-t0r" id="PYf-oZ-raS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="done" systemItem="trash" id="RGd-bB-Tht">
-                            <connections>
-                                <action selector="deleteContainer:" destination="BYZ-38-t0r" id="zHL-hM-hGV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem style="done" systemItem="trash" id="RGd-bB-Tht"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="4ig-39-nYY"/>
                     <connections>
-                        <outlet property="deleteContainer" destination="RGd-bB-Tht" id="mFe-eJ-wGa"/>
                         <outlet property="tableView" destination="Wmh-nA-RzC" id="O6V-mm-hgI"/>
+                        <segue destination="D5G-ju-jfP" kind="show" identifier="VerContainer" id="H7H-yc-Vym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
+        <!--Container Browser-->
+        <scene sceneID="P7P-ie-cXV">
+            <objects>
+                <viewController id="D5G-ju-jfP" customClass="ContainerBrowser" customModule="Boot4Practica" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3ls-zO-Nzi"/>
+                        <viewControllerLayoutGuide type="bottom" id="ex0-a7-dTs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MaO-ng-Wgd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7C-Qc-OJ5">
+                                <rect key="frame" x="16" y="68" width="343" height="547"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Mea-ML-pQy">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mea-ML-pQy" id="PKP-Pt-HWX">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="done" systemItem="camera" id="Pz2-83-fgZ">
+                            <connections>
+                                <action selector="uploadAction:" destination="D5G-ju-jfP" id="q2G-9U-IN9"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="xFG-Yp-0Vd"/>
+                    <connections>
+                        <outlet property="tableView" destination="j7C-Qc-OJ5" id="oSU-Q5-xuC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1U-Vf-CcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5999999999999" y="138.98050974512745"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YJe-Yp-LG8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="ebz-Jx-Rhg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ebz-Jx-Rhg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xAy-eN-6uE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
