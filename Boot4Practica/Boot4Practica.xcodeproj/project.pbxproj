@@ -15,6 +15,10 @@
 		DF6AF9E01E81D09600A17A39 /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF9DF1E81D09600A17A39 /* AZSClient.framework */; };
 		DF6AF9E31E81D0C700A17A39 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AF9E21E81D0C700A17A39 /* libxml2.2.tbd */; };
 		DFD84D261E830E4D00371417 /* ContainerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD84D251E830E4D00371417 /* ContainerBrowser.swift */; };
+		DFD84D281E83353700371417 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD84D271E83353700371417 /* MicrosoftAzureMobile.framework */; };
+		DFD84D2A1E83360900371417 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD84D291E83360900371417 /* WebKit.framework */; };
+		DFD84D2C1E83369F00371417 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD84D2B1E83369F00371417 /* Security.framework */; };
+		DFD84D2E1E8336A700371417 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD84D2D1E8336A700371417 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		DF6AF9E21E81D0C700A17A39 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		DF6AF9E41E81D1CC00A17A39 /* Boot4Practica-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boot4Practica-Bridging-Header.h"; sourceTree = "<group>"; };
 		DFD84D251E830E4D00371417 /* ContainerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBrowser.swift; sourceTree = "<group>"; };
+		DFD84D271E83353700371417 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		DFD84D291E83360900371417 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		DFD84D2B1E83369F00371417 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DFD84D2D1E8336A700371417 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF6AF9E31E81D0C700A17A39 /* libxml2.2.tbd in Frameworks */,
+				DFD84D2E1E8336A700371417 /* SafariServices.framework in Frameworks */,
+				DFD84D2C1E83369F00371417 /* Security.framework in Frameworks */,
+				DFD84D2A1E83360900371417 /* WebKit.framework in Frameworks */,
+				DFD84D281E83353700371417 /* MicrosoftAzureMobile.framework in Frameworks */,
 				DF6AF9E01E81D09600A17A39 /* AZSClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				DF6AF9E21E81D0C700A17A39 /* libxml2.2.tbd */,
+				DFD84D2D1E8336A700371417 /* SafariServices.framework */,
+				DFD84D2B1E83369F00371417 /* Security.framework */,
+				DFD84D291E83360900371417 /* WebKit.framework */,
+				DFD84D271E83353700371417 /* MicrosoftAzureMobile.framework */,
 				DF6AF9DF1E81D09600A17A39 /* AZSClient.framework */,
 			);
 			name = Frameworks;

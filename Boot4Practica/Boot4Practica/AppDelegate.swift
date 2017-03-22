@@ -7,15 +7,48 @@
 //
 
 import UIKit
+import WebKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Se crea la conexión con el Mobile App de Azure
+        let client = MSClient(
+            applicationURLString:"https://webmobileboot4jjacin.azurewebsites.net"
+        )
+        
+        // Se crea una referencia a la talba de Autores (esto es una prueba)
+        let tableAutores = client.table(withName: "Autores")
+        // Se instancia el Dictionary con el Autor a dar de alta
+        let autor = ["name" : "Juan", "secondName" : "Martin", "age" : "43"]
+        
+        //Se inserta un dato en la tavla Autores
+        tableAutores.insert(autor) { (result, error) in
+            // Se consulta si ha habido error
+            if let _ = error {
+                print("\(error.debugDescription)")
+            } else {
+                print("\(result)")
+            }
+        }
+        
+        // Se consultan los datos
+        // Se instancia un predicado para la consulta
+        let predicate = NSPredicate(format: "name == 'Juan'")
+        // Se realiza la consulta sobre la tabla Autores con el predicado indicado
+        tableAutores.read(with: predicate) { (result, error) in
+            // Se consulta si ha habido error
+            if let _ = error {
+                print("\(error.debugDescription)")
+            } else {
+                print("\(result)")
+            }
+        }
         
         return true
     }
