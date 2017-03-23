@@ -10,10 +10,16 @@ import UIKit
 
 class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: - Constants
+    let tableNamePosts = "Posts"
+    let azureAppServiceEndpoint = "https://webmobileboot4jjacin.azurewebsites.net"
+    
+    //MARK: - Properties
     @IBOutlet weak var titlePostTxt: UITextField!
     @IBOutlet weak var textPostTxt: UITextField!
     @IBOutlet weak var imagePost: UIImageView!
     
+    var client: MSClient
     var isReadyToPublish: Bool = false
     var imageCaptured: UIImage! {
         didSet {
@@ -23,6 +29,8 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAzureAppService()
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +48,8 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
 
     @IBAction func savePostInCloud(_ sender: Any) {
-        // preparado para implementar codigo que persita en el cloud 
+        // preparado para implementar codigo que persita en el cloud
+        newPostInService(titlePostTxt.text!, textPostTxt.text!, isReadyToPublish, nil)
     }
     /*
     // MARK: - Navigation
@@ -102,7 +111,31 @@ extension NewPostController {
         self.dismiss(animated: false, completion: {
         })
     }
+}
+
+//MARK: - Extensions
+// Métodos para AppService
+extension NewPostController {
+    // Método que genera la conexión
+    func setupAzureAppService() {
+        // Se instancia la conexión
+        client = MSClient(applicationURLString: azureAppServiceEndpoint)
+    }
     
+    // Método que permite la subida del Post
+    func newPostInService(_ title: String, _ description: String, _ status: Bool, _ imgData: Data!) {
+        // Se crea la referecia a la tabla destino
+        let posts = client.table(withName: tableNamePosts)
+        
+        // Se realiza el insert en la tabla
+        posts.insert(["title":title, "postDescription":description, "status":status]) { (result, error) in
+            // Se comprueba si algo ha ido mal
+            if let _ = error {
+                print("\(error)")
+                return
+            }
+        }
+    }
 }
 
 
