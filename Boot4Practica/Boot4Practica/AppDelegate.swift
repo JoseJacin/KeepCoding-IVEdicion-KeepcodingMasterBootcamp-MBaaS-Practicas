@@ -23,6 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         // Se crea una referencia a la talba de Autores (esto es una prueba)
+        let tablePosts = client.table(withName: "Posts")
+        // Se instancia el Dictionary con el Autor a dar de alta
+        let postsObject = ["name" : "Juan", "secondName" : "Martin", "age" : "43", "autor" : "Juan"]
+        
+        //Se inserta un dato en la tavla Autores
+        tablePosts.insert(postsObject) { (result, error) in
+            // Se consulta si ha habido error
+            if let _ = error {
+                print("\(error.debugDescription)")
+            } else {
+                print("\(result)")
+            }
+        }
+        
+        // Se crea una referencia a la talba de Autores (esto es una prueba)
         let tableAutores = client.table(withName: "Autores")
         // Se instancia el Dictionary con el Autor a dar de alta
         let autor = ["name" : "Juan", "secondName" : "Martin", "age" : "43"]
