@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let client = MSClient(applicationURLString: "https://webmobileboot4jjacin.azurewebsites.net")
+        client.invokeAPI("APIjjacin", body: nil, httpMethod: "GET", parameters: ["miparametro":"Hola"], headers: nil) { (result, response, error) in
+            print("\(result)")
+        }
+
         
         return true
     }
