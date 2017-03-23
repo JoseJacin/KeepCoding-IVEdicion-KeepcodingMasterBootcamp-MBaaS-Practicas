@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1F8BAA1E846FA400446C3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F8BA91E846FA400446C3E /* Constants.swift */; };
 		DF6AF9CE1E81CF4000A17A39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AF9CD1E81CF4000A17A39 /* AppDelegate.swift */; };
 		DF6AF9D01E81CF4000A17A39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AF9CF1E81CF4000A17A39 /* ViewController.swift */; };
 		DF6AF9D31E81CF4000A17A39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6AF9D11E81CF4000A17A39 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF1F8BA91E846FA400446C3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DF6AF9CA1E81CF4000A17A39 /* Boot4Practica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boot4Practica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6AF9CD1E81CF4000A17A39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF6AF9CF1E81CF4000A17A39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1F8BA81E846F9800446C3E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF1F8BA91E846FA400446C3E /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		DF6AF9C11E81CF4000A17A39 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6AF9CD1E81CF4000A17A39 /* AppDelegate.swift */,
+				DF1F8BA81E846F9800446C3E /* Utils */,
 				DFD84D241E830E1700371417 /* ViewControllers */,
 				DF6AF9D11E81CF4000A17A39 /* Main.storyboard */,
 				DF6AF9D41E81CF4000A17A39 /* Assets.xcassets */,
@@ -185,6 +196,7 @@
 				DF6AF9D01E81CF4000A17A39 /* ViewController.swift in Sources */,
 				DF6AF9CE1E81CF4000A17A39 /* AppDelegate.swift in Sources */,
 				DFD84D261E830E4D00371417 /* ContainerBrowser.swift in Sources */,
+				DF1F8BAA1E846FA400446C3E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Se crea la conexión con el Mobile App de Azure
         let client = MSClient(
-            applicationURLString:"https://webmobileboot4jjacin.azurewebsites.net"
+            applicationURLString:Constants.URLString
         )
         
         // Se crea una referencia a la talba de Autores (esto es una prueba)

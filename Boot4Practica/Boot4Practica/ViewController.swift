@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Función que configura la conexión con Azure
     func setupAzureStorageConnect() {
-        let credentials = AZSStorageCredentials(accountName: "josejboot4", accountKey: "zoEj+gvaq3XkXuljNE+sALVUfZpBT9YFubWaasy/HjrppJJzDSoioyiAG05HkzJR055xRZH9U/XQ8wyFa1qpEQ==")
+        let credentials = AZSStorageCredentials(accountName: Constants.AccountName, accountKey: Constants.AccountKey)
         
         do {
             // Se instancia la cuenta
