@@ -121,4 +121,7 @@ build
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+# Fichero de configuracion
+DatosConexiónAzure.rtf
+
 # End of https://www.gitignore.io/api/xcode,swift,objective-c
