@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D8F3B9B1E843C20004DB370 /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3B991E843C20004DB370 /* AZSClient.framework */; };
+		5D8F3B9C1E843C20004DB370 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3B9A1E843C20004DB370 /* MicrosoftAzureMobile.framework */; };
+		5D8F3BA01E843C5E004DB370 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3B9F1E843C5E004DB370 /* SafariServices.framework */; };
+		5D8F3BA21E843C69004DB370 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3BA11E843C69004DB370 /* Security.framework */; };
+		5D8F3BA41E843C75004DB370 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3BA31E843C75004DB370 /* WebKit.framework */; };
+		5D8F3BA61E843C7E004DB370 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F3BA51E843C7E004DB370 /* libxml2.2.tbd */; };
+		5D931CE61E83EEEA005051E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931CE51E83EEEA005051E9 /* AppDelegate.swift */; };
+		5D931CED1E83EEEA005051E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D931CEC1E83EEEA005051E9 /* Assets.xcassets */; };
+		5D931CF01E83EEEA005051E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D931CEE1E83EEEA005051E9 /* LaunchScreen.storyboard */; };
+		5D931CFD1E83F110005051E9 /* TimeLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D931CFC1E83F110005051E9 /* TimeLine.storyboard */; };
+		5D931D011E83F5D1005051E9 /* MainTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D001E83F5D1005051E9 /* MainTimeLine.swift */; };
+		5D931D031E83F67C005051E9 /* PostReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D021E83F67C005051E9 /* PostReview.swift */; };
+		5D931D051E83F773005051E9 /* AuthorPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D041E83F773005051E9 /* AuthorPostList.swift */; };
+		5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D061E83F7BA005051E9 /* NewPostController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D8F3B991E843C20004DB370 /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
+		5D8F3B9A1E843C20004DB370 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		5D8F3B9F1E843C5E004DB370 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		5D8F3BA11E843C69004DB370 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5D8F3BA31E843C75004DB370 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5D8F3BA51E843C7E004DB370 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		5D8F3BA71E843D3B004DB370 /* PracticaBoot-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PracticaBoot-Bridging.h"; sourceTree = "<group>"; };
+		5D931CE21E83EEEA005051E9 /* PracticaBoot4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticaBoot4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D931CE51E83EEEA005051E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D931CEC1E83EEEA005051E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D931CEF1E83EEEA005051E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D931CF11E83EEEA005051E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D931CFC1E83F110005051E9 /* TimeLine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeLine.storyboard; sourceTree = "<group>"; };
+		5D931D001E83F5D1005051E9 /* MainTimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimeLine.swift; sourceTree = "<group>"; };
+		5D931D021E83F67C005051E9 /* PostReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReview.swift; sourceTree = "<group>"; };
+		5D931D041E83F773005051E9 /* AuthorPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPostList.swift; sourceTree = "<group>"; };
+		5D931D061E83F7BA005051E9 /* NewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D931CDF1E83EEEA005051E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8F3BA61E843C7E004DB370 /* libxml2.2.tbd in Frameworks */,
+				5D8F3BA41E843C75004DB370 /* WebKit.framework in Frameworks */,
+				5D8F3BA21E843C69004DB370 /* Security.framework in Frameworks */,
+				5D8F3BA01E843C5E004DB370 /* SafariServices.framework in Frameworks */,
+				5D8F3B9B1E843C20004DB370 /* AZSClient.framework in Frameworks */,
+				5D8F3B9C1E843C20004DB370 /* MicrosoftAzureMobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D8F3B9D1E843C30004DB370 /* Azure frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D8F3B991E843C20004DB370 /* AZSClient.framework */,
+				5D8F3B9A1E843C20004DB370 /* MicrosoftAzureMobile.framework */,
+				5D8F3BA71E843D3B004DB370 /* PracticaBoot-Bridging.h */,
+			);
+			name = "Azure frameworks";
+			sourceTree = "<group>";
+		};
+		5D8F3B9E1E843C5D004DB370 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D8F3BA51E843C7E004DB370 /* libxml2.2.tbd */,
+				5D8F3BA31E843C75004DB370 /* WebKit.framework */,
+				5D8F3BA11E843C69004DB370 /* Security.framework */,
+				5D8F3B9F1E843C5E004DB370 /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D931CD91E83EEEA005051E9 = {
+			isa = PBXGroup;
+			children = (
+				5D931CE41E83EEEA005051E9 /* PracticaBoot4 */,
+				5D931CE31E83EEEA005051E9 /* Products */,
+				5D8F3B9E1E843C5D004DB370 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5D931CE31E83EEEA005051E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D931CE21E83EEEA005051E9 /* PracticaBoot4.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D931CE41E83EEEA005051E9 /* PracticaBoot4 */ = {
+			isa = PBXGroup;
+			children = (
+				5D8F3B9D1E843C30004DB370 /* Azure frameworks */,
+				5D931CF71E83F069005051E9 /* AppDelegate */,
+				5D931CF81E83F076005051E9 /* ViewControllers */,
+				5D931CF91E83F087005051E9 /* Storyboards */,
+				5D931CFB1E83F0A8005051E9 /* Resources */,
+			);
+			path = PracticaBoot4;
+			sourceTree = "<group>";
+		};
+		5D931CF71E83F069005051E9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5D931CE51E83EEEA005051E9 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5D931CF81E83F076005051E9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D931D001E83F5D1005051E9 /* MainTimeLine.swift */,
+				5D931D081E8414BB005051E9 /* All users */,
+				5D931D091E8414CA005051E9 /* Auth Users */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D931CF91E83F087005051E9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5D931CEE1E83EEEA005051E9 /* LaunchScreen.storyboard */,
+				5D931CFC1E83F110005051E9 /* TimeLine.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5D931CFB1E83F0A8005051E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D931CEC1E83EEEA005051E9 /* Assets.xcassets */,
+				5D931CF11E83EEEA005051E9 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5D931D081E8414BB005051E9 /* All users */ = {
+			isa = PBXGroup;
+			children = (
+				5D931D021E83F67C005051E9 /* PostReview.swift */,
+			);
+			name = "All users";
+			sourceTree = "<group>";
+		};
+		5D931D091E8414CA005051E9 /* Auth Users */ = {
+			isa = PBXGroup;
+			children = (
+				5D931D041E83F773005051E9 /* AuthorPostList.swift */,
+				5D931D061E83F7BA005051E9 /* NewPostController.swift */,
+			);
+			name = "Auth Users";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D931CE11E83EEEA005051E9 /* PracticaBoot4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D931CF41E83EEEA005051E9 /* Build configuration list for PBXNativeTarget "PracticaBoot4" */;
+			buildPhases = (
+				5D931CDE1E83EEEA005051E9 /* Sources */,
+				5D931CDF1E83EEEA005051E9 /* Frameworks */,
+				5D931CE01E83EEEA005051E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PracticaBoot4;
+			productName = PracticaBoot4;
+			productReference = 5D931CE21E83EEEA005051E9 /* PracticaBoot4.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D931CDA1E83EEEA005051E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = COM;
+				TargetAttributes = {
+					5D931CE11E83EEEA005051E9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8Z8X9YVPSZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5D931CDD1E83EEEA005051E9 /* Build configuration list for PBXProject "PracticaBoot4" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D931CD91E83EEEA005051E9;
+			productRefGroup = 5D931CE31E83EEEA005051E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D931CE11E83EEEA005051E9 /* PracticaBoot4 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D931CE01E83EEEA005051E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D931CFD1E83F110005051E9 /* TimeLine.storyboard in Resources */,
+				5D931CF01E83EEEA005051E9 /* LaunchScreen.storyboard in Resources */,
+				5D931CED1E83EEEA005051E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D931CDE1E83EEEA005051E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D931D051E83F773005051E9 /* AuthorPostList.swift in Sources */,
+				5D931CE61E83EEEA005051E9 /* AppDelegate.swift in Sources */,
+				5D931D031E83F67C005051E9 /* PostReview.swift in Sources */,
+				5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */,
+				5D931D011E83F5D1005051E9 /* MainTimeLine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D931CEE1E83EEEA005051E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D931CEF1E83EEEA005051E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D931CF21E83EEEA005051E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D931CF31E83EEEA005051E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D931CF51E83EEEA005051E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Z8X9YVPSZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PracticaBoot4",
+				);
+				INFOPLIST_FILE = PracticaBoot4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.com.PracticaBoot4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PracticaBoot4/PracticaBoot-Bridging.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5D931CF61E83EEEA005051E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Z8X9YVPSZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PracticaBoot4",
+				);
+				INFOPLIST_FILE = PracticaBoot4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.com.PracticaBoot4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PracticaBoot4/PracticaBoot-Bridging.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D931CDD1E83EEEA005051E9 /* Build configuration list for PBXProject "PracticaBoot4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D931CF21E83EEEA005051E9 /* Debug */,
+				5D931CF31E83EEEA005051E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D931CF41E83EEEA005051E9 /* Build configuration list for PBXNativeTarget "PracticaBoot4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D931CF51E83EEEA005051E9 /* Debug */,
+				5D931CF61E83EEEA005051E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D931CDA1E83EEEA005051E9 /* Project object */;
+}
