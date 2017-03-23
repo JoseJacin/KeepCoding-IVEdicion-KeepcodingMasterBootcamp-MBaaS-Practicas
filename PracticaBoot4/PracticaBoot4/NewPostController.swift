@@ -13,13 +13,16 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
     //MARK: - Constants
     let tableNamePosts = "Posts"
     let azureAppServiceEndpoint = "https://webmobileboot4jjacin.azurewebsites.net"
+    let AccountName = "josejboot4"
+    let AccountKey = "zoEj+gvaq3XkXuljNE+sALVUfZpBT9YFubWaasy/HjrppJJzDSoioyiAG05HkzJR055xRZH9U/XQ8wyFa1qpEQ=="
+    let containerPhotos = "fotos"
     
     //MARK: - Properties
     @IBOutlet weak var titlePostTxt: UITextField!
     @IBOutlet weak var textPostTxt: UITextField!
     @IBOutlet weak var imagePost: UIImageView!
     
-    var client: MSClient
+    var client: MSClient!
     var isReadyToPublish: Bool = false
     var imageCaptured: UIImage! {
         didSet {
@@ -49,7 +52,7 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     @IBAction func savePostInCloud(_ sender: Any) {
         // preparado para implementar codigo que persita en el cloud
-        newPostInService(titlePostTxt.text!, textPostTxt.text!, isReadyToPublish, nil)
+        newPostInService(titlePostTxt.text!, textPostTxt.text!, isReadyToPublish, UIImageJPEGRepresentation(imagePost.image!, 0.5))
     }
     /*
     // MARK: - Navigation
@@ -123,7 +126,7 @@ extension NewPostController {
     }
     
     // Método que permite la subida del Post
-    func newPostInService(_ title: String, _ description: String, _ status: Bool, _ imgData: Data!) {
+    func newPostInService(_ title: String, _ description: String, _ status: Bool, _ imgData: Data! = nil) {
         // Se crea la referecia a la tabla destino
         let posts = client.table(withName: tableNamePosts)
         
@@ -134,6 +137,56 @@ extension NewPostController {
                 print("\(error)")
                 return
             }
+            
+            // Se comprueba si la imagen no es nulo
+            if let _ = imgData {
+                // Se sube la foto (blob)
+                self.uploadDataPost(data: imgData, completionHandler: { (blobName) in
+                    let item = ["id" : (result?["id"] as! String), "photo" : blobName]
+                    posts.update(item, completion: { (result, error) in
+                        // Se comprueba si algo ha ido mal
+                        if let _ = error {
+                            print("Error ---> \(error?.localizedDescription)")
+                            return
+                        }
+                        print("\(result)")
+                    })
+                })
+            }
+        }
+    }
+    
+    // Función que sube la foto del Post
+    func uploadDataPost(data: Data, completionHandler: @escaping ((_: String?) -> Void)) {
+        // Se instancian los credenciales
+        let credentials = AZSStorageCredentials(accountName: AccountName, accountKey: AccountKey)
+        
+        do {
+            // Se instancia la cuenta
+            let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            // Se instancia el blobClient. Cliente que gestiona todos los Containers
+            let blobClient = account.getBlobClient()
+            
+            // Se crea la referencia al container
+            let container = blobClient?.containerReference(fromName: containerPhotos)
+            
+            // Se instancia el blob
+            let blobBlock = container?.blockBlobReference(fromName: String("\(UUID().uuidString).jpg"))
+            
+            // Se realiza la subida del blob
+            blobBlock?.upload(from: data, completionHandler: { (error) in
+                // Se comprueba si algo ha ido mal
+                if error == nil {
+                    // Si todo ha ido bien, se retorna el nombre del blob
+                    completionHandler(blobBlock?.blobName)
+                } else {
+                    // Si algo ha ido mal no se hace nada
+                    completionHandler(nil)
+                }
+            })
+        } catch let error {
+            print("\(error.localizedDescription)")
         }
     }
 }
