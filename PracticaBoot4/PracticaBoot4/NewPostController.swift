@@ -11,11 +11,7 @@ import UIKit
 class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: - Constants
-    let tableNamePosts = "Posts"
-    let azureAppServiceEndpoint = "https://webmobileboot4jjacin.azurewebsites.net"
-    let AccountName = "josejboot4"
-    let AccountKey = "zoEj+gvaq3XkXuljNE+sALVUfZpBT9YFubWaasy/HjrppJJzDSoioyiAG05HkzJR055xRZH9U/XQ8wyFa1qpEQ=="
-    let containerPhotos = "fotos"
+var constantes = Constants()
     
     //MARK: - Properties
     @IBOutlet weak var titlePostTxt: UITextField!
@@ -122,13 +118,13 @@ extension NewPostController {
     // Método que genera la conexión
     func setupAzureAppService() {
         // Se instancia la conexión
-        client = MSClient(applicationURLString: azureAppServiceEndpoint)
+        client = MSClient(applicationURLString: Constants.azureAppServiceEndpoint)
     }
     
     // Método que permite la subida del Post
     func newPostInService(_ title: String, _ description: String, _ status: Bool, _ imgData: Data! = nil) {
         // Se crea la referecia a la tabla destino
-        let posts = client.table(withName: tableNamePosts)
+        let posts = client.table(withName: Constants.tableNamePosts)
         
         // Se realiza el insert en la tabla
         posts.insert(["title":title, "postDescription":description, "status":status]) { (result, error) in
@@ -159,7 +155,7 @@ extension NewPostController {
     // Función que sube la foto del Post
     func uploadDataPost(data: Data, completionHandler: @escaping ((_: String?) -> Void)) {
         // Se instancian los credenciales
-        let credentials = AZSStorageCredentials(accountName: AccountName, accountKey: AccountKey)
+        let credentials = AZSStorageCredentials(accountName: Constants.AccountName, accountKey: Constants.AccountKey)
         
         do {
             // Se instancia la cuenta
@@ -169,7 +165,7 @@ extension NewPostController {
             let blobClient = account.getBlobClient()
             
             // Se crea la referencia al container
-            let container = blobClient?.containerReference(fromName: containerPhotos)
+            let container = blobClient?.containerReference(fromName: Constants.containerPhotos)
             
             // Se instancia el blob
             let blobBlock = container?.blockBlobReference(fromName: String("\(UUID().uuidString).jpg"))

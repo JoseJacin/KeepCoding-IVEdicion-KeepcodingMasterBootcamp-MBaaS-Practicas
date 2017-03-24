@@ -21,6 +21,7 @@
 		5D931D031E83F67C005051E9 /* PostReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D021E83F67C005051E9 /* PostReview.swift */; };
 		5D931D051E83F773005051E9 /* AuthorPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D041E83F773005051E9 /* AuthorPostList.swift */; };
 		5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D061E83F7BA005051E9 /* NewPostController.swift */; };
+		DF1F8BAD1E8496E900446C3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F8BAC1E8496E900446C3E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5D931D021E83F67C005051E9 /* PostReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReview.swift; sourceTree = "<group>"; };
 		5D931D041E83F773005051E9 /* AuthorPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPostList.swift; sourceTree = "<group>"; };
 		5D931D061E83F7BA005051E9 /* NewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		DF1F8BAC1E8496E900446C3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		5D931CE41E83EEEA005051E9 /* PracticaBoot4 */ = {
 			isa = PBXGroup;
 			children = (
+				DF1F8BAB1E8496E000446C3E /* Utils */,
 				5D8F3B9D1E843C30004DB370 /* Azure frameworks */,
 				5D931CF71E83F069005051E9 /* AppDelegate */,
 				5D931CF81E83F076005051E9 /* ViewControllers */,
@@ -161,6 +164,14 @@
 				5D931D061E83F7BA005051E9 /* NewPostController.swift */,
 			);
 			name = "Auth Users";
+			sourceTree = "<group>";
+		};
+		DF1F8BAB1E8496E000446C3E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF1F8BAC1E8496E900446C3E /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				5D931D031E83F67C005051E9 /* PostReview.swift in Sources */,
 				5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */,
 				5D931D011E83F5D1005051E9 /* MainTimeLine.swift in Sources */,
+				DF1F8BAD1E8496E900446C3E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
