@@ -12,7 +12,8 @@ class AuthorPostList: UITableViewController {
 
     let cellIdentifier = "POSTAUTOR"
     
-    var model = ["test1", "test2"]
+    var model: [Any] = []
+    let client = MSClient(applicationURLString: Constants.azureAppServiceEndpoint)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,25 @@ class AuthorPostList: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: #selector(hadleRefresh(_:)), for: UIControlEvents.valueChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        client.login(withProvider: "Facebook", controller: self, animated: true) { (user, error) in
+            // Se comprueba si ha habido error
+            if let _ = error {
+                print("\(error?.localizedDescription)")
+                return
+            } else {
+                // Si no se ha podido obtener user
+                //guard user { return }
+                
+                print("\(user?.userId)")
+            }
+        }
+        
+        pullModel()
     }
     
     func hadleRefresh(_ refreshControl: UIRefreshControl) {
@@ -42,13 +62,21 @@ class AuthorPostList: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Se comprueba si model tiene información
+        if model.isEmpty {
+            return 0
+        }
         return model.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = model[indexPath.row]
+        
+        // Se obtiene el objeto del modelo en cuestión
+        let item = model[indexPath.row] as! Dictionary<String, Any>
+        
+        cell.textLabel?.text = item["title"] as? String
     
         return cell
     }
@@ -57,6 +85,24 @@ class AuthorPostList: UITableViewController {
         
         let publish = UITableViewRowAction(style: .normal, title: "Publicar") { (action, indexPath) in
             // Codigo para publicar el post
+            let item = self.model[indexPath.row] as? Dictionary<String, Any>
+            
+            // Se construyen los parámetros
+            let paramsToCloud = ["id": item?["id"] as! String, "estado": true] as [String : Any]
+            
+            self.client.invokeAPI("PublishPosts",
+                             body: nil,
+                             httpMethod: "PUT",
+                             parameters: paramsToCloud,
+                             headers: nil) {
+                                (result, response, error) in
+                                // Se comprueba si ha habido error
+                                if let _ = error {
+                                    print("\(error?.localizedDescription)")
+                                    return
+                                }
+                                self.pullModel()
+            }
         }
         publish.backgroundColor = UIColor.green
         let deleteRow = UITableViewRowAction(style: .destructive, title: "Eliminar") { (action, indexPath) in
@@ -110,5 +156,27 @@ class AuthorPostList: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Functions
+    // Función que sincroniza el modelo con lo recuperado
+    func pullModel() {
+        client.invokeAPI("GetAllMyPosts",
+                         body: nil,
+                         httpMethod: "GET",
+                         parameters: nil,
+                         headers: nil) {
+                            (result, response, error) in
+                            // Se comprueba si ha habido error
+                            if let _ = error {
+                                print("\(error?.localizedDescription)")
+                                return
+                            }
+                            print("\(result)")
+                            self.model = result as! [Any]
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+        }
+    }
 
 }
