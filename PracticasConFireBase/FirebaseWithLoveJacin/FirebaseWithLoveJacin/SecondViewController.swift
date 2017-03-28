@@ -32,7 +32,13 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: - Actions
+    @IBAction func evento3Action(_ sender: Any) {
+        // Se envía un evento de log a Goolge Analitics
+        FIRAnalytics.logEvent(withName: "Action3",
+                              parameters: ["producto_description" : "Manzanas" as NSObject])
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -42,11 +48,4 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    //MARK: - Actions
-    @IBAction func evento3Action(_ sender: Any) {
-        // Se envía un evento de log a Goolge Analitics
-        FIRAnalytics.logEvent(withName: "Action3",
-                              parameters: ["producto_description" : "Manzanas" as NSObject])
-    }
 }
