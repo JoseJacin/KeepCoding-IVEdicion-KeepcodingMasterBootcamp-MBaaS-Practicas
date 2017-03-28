@@ -15,6 +15,7 @@
 		DF22D8741E8AFE4100D9E823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF22D8721E8AFE4100D9E823 /* LaunchScreen.storyboard */; };
 		DF22D87C1E8AFF6100D9E823 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF22D87B1E8AFF6100D9E823 /* GoogleService-Info.plist */; };
 		DFCCB1371E8B0A3C0048759B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */; };
+		DFCCB1391E8B14920048759B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCCB1381E8B14920048759B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DF22D8751E8AFE4100D9E823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF22D87B1E8AFF6100D9E823 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DFCCB1381E8B14920048759B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +84,57 @@
 		DF22D8681E8AFE4100D9E823 /* FirebaseWithLoveJacin */ = {
 			isa = PBXGroup;
 			children = (
-				DF22D8691E8AFE4100D9E823 /* AppDelegate.swift */,
+				DFCCB13D1E8B14F00048759B /* configData */,
+				DFCCB13C1E8B14E00048759B /* AppDelegate */,
+				DFCCB13A1E8B14AE0048759B /* ViewControllers */,
+				DFCCB13B1E8B14C10048759B /* StoryBoard */,
+				DFCCB13E1E8B14FD0048759B /* Resources */,
+			);
+			path = FirebaseWithLoveJacin;
+			sourceTree = "<group>";
+		};
+		DFCCB13A1E8B14AE0048759B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				DF22D86B1E8AFE4100D9E823 /* ViewController.swift */,
 				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
+				DFCCB1381E8B14920048759B /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DFCCB13B1E8B14C10048759B /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
 				DF22D86D1E8AFE4100D9E823 /* Main.storyboard */,
-				DF22D8701E8AFE4100D9E823 /* Assets.xcassets */,
 				DF22D8721E8AFE4100D9E823 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		DFCCB13C1E8B14E00048759B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DF22D8691E8AFE4100D9E823 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DFCCB13D1E8B14F00048759B /* configData */ = {
+			isa = PBXGroup;
+			children = (
 				DF22D8751E8AFE4100D9E823 /* Info.plist */,
 				DF22D87B1E8AFF6100D9E823 /* GoogleService-Info.plist */,
 			);
-			path = FirebaseWithLoveJacin;
+			name = configData;
+			sourceTree = "<group>";
+		};
+		DFCCB13E1E8B14FD0048759B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF22D8701E8AFE4100D9E823 /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCCB1391E8B14920048759B /* LoginViewController.swift in Sources */,
 				DFCCB1371E8B0A3C0048759B /* SecondViewController.swift in Sources */,
 				DF22D86C1E8AFE4100D9E823 /* ViewController.swift in Sources */,
 				DF22D86A1E8AFE4100D9E823 /* AppDelegate.swift in Sources */,

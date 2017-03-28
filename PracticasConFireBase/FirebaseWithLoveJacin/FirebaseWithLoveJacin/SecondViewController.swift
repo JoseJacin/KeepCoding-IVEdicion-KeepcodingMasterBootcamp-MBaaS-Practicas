@@ -20,6 +20,13 @@ class SecondViewController: UIViewController {
         FIRAnalytics.setScreenName("SecondViewController", screenClass: "Second")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Se envía un evento de log a Goolge Analitics
+        FIRAnalytics.logEvent(withName: "Fin_SecondViewController", parameters: [kFIRParameterFlightNumber: "" as NSObject])
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
