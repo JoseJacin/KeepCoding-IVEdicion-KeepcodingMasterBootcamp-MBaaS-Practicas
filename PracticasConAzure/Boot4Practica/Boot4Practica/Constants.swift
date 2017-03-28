@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let URLString = "https://webmobileboot4jjacin.azurewebsites.net"
-    static let AccountName = "josejboot4"
-    static let AccountKey = "zoEj+gvaq3XkXuljNE+sALVUfZpBT9YFubWaasy/HjrppJJzDSoioyiAG05HkzJR055xRZH9U/XQ8wyFa1qpEQ=="
+    static let URLString = "YOUR URL STRING CONNECTION OF AZURE SERVICES"
+    static let AccountName = "YOUR ACCOUNT NAME OF AZURE SERVICES"
+    static let AccountKey = "YOUR ACCOUNT KEY OF AZURE SERVICES"
 }
