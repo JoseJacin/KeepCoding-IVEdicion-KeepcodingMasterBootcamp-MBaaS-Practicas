@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SecondViewController: UIViewController {
 
@@ -14,6 +15,9 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Se envía un evento de Pantalla a Goolge Analitics
+        FIRAnalytics.setScreenName("SecondViewController", screenClass: "Second")
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,5 +38,8 @@ class SecondViewController: UIViewController {
 
     //MARK: - Actions
     @IBAction func evento3Action(_ sender: Any) {
+        // Se envía un evento de log a Goolge Analitics
+        FIRAnalytics.logEvent(withName: "Action3",
+                              parameters: ["producto_description" : "Manzanas" as NSObject])
     }
 }

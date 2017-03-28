@@ -84,12 +84,12 @@
 			children = (
 				DF22D8691E8AFE4100D9E823 /* AppDelegate.swift */,
 				DF22D86B1E8AFE4100D9E823 /* ViewController.swift */,
+				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
 				DF22D86D1E8AFE4100D9E823 /* Main.storyboard */,
 				DF22D8701E8AFE4100D9E823 /* Assets.xcassets */,
 				DF22D8721E8AFE4100D9E823 /* LaunchScreen.storyboard */,
 				DF22D8751E8AFE4100D9E823 /* Info.plist */,
 				DF22D87B1E8AFF6100D9E823 /* GoogleService-Info.plist */,
-				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
 			);
 			path = FirebaseWithLoveJacin;
 			sourceTree = "<group>";
