@@ -1,0 +1,6 @@
+framework module Pods_FirebaseWithLoveJacin {
+  umbrella header "Pods-FirebaseWithLoveJacin-umbrella.h"
+
+  export *
+  module * { export * }
+}
