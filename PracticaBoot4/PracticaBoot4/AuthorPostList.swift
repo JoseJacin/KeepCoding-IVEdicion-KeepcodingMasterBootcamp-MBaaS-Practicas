@@ -47,6 +47,7 @@ class AuthorPostList: UITableViewController {
     }
     
     func hadleRefresh(_ refreshControl: UIRefreshControl) {
+        pullModel()
         refreshControl.endRefreshing()
     }
     
