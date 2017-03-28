@@ -7,8 +7,9 @@ module.exports = {
         var item = req.query.id
         
         // Se monta la consulta SQL
-        var query = { sql: "UPDATE SET status = @status WHERE id = @id", 
-            parameters: [{id: item, status: estado}]  
+        var query = { sql: "UPDATE Posts SET status = @status WHERE id = @id",
+            parameters: [{name: "id", value: item},
+                {name: "status", value: estado}]
             };
             
        // Se ejecuta la consulta

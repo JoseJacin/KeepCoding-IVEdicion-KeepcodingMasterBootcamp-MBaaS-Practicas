@@ -4,7 +4,9 @@ module.exports = {
         if (typeof req.params.lenght < 0) {
             console.log("error en llista de parámetros");
         }
-        
+
+        console.log("Ejemplo de despliegue");
+
         // Se monta la consulta SQL
         var query = { sql: "SELECT * FROM Posts" };
         
