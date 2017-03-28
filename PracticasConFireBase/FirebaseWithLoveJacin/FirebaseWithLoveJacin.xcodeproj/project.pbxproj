@@ -67,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				DF22D8681E8AFE4100D9E823 /* FirebaseWithLoveJacin */,
-				DF22D8671E8AFE4100D9E823 /* Products */,
-				A61F20A4E8FD19A95411A712 /* Pods */,
 				18ACDE591D8999531F39258B /* Frameworks */,
+				A61F20A4E8FD19A95411A712 /* Pods */,
+				DF22D8671E8AFE4100D9E823 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,11 +84,11 @@
 		DF22D8681E8AFE4100D9E823 /* FirebaseWithLoveJacin */ = {
 			isa = PBXGroup;
 			children = (
-				DFCCB13D1E8B14F00048759B /* configData */,
 				DFCCB13C1E8B14E00048759B /* AppDelegate */,
-				DFCCB13A1E8B14AE0048759B /* ViewControllers */,
-				DFCCB13B1E8B14C10048759B /* StoryBoard */,
 				DFCCB13E1E8B14FD0048759B /* Resources */,
+				DFCCB13B1E8B14C10048759B /* StoryBoard */,
+				DFCCB13A1E8B14AE0048759B /* ViewControllers */,
+				DFCCB13D1E8B14F00048759B /* configData */,
 			);
 			path = FirebaseWithLoveJacin;
 			sourceTree = "<group>";
@@ -96,20 +96,22 @@
 		DFCCB13A1E8B14AE0048759B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF22D86B1E8AFE4100D9E823 /* ViewController.swift */,
-				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
 				DFCCB1381E8B14920048759B /* LoginViewController.swift */,
+				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
+				DF22D86B1E8AFE4100D9E823 /* ViewController.swift */,
 			);
 			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DFCCB13B1E8B14C10048759B /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				DF22D86D1E8AFE4100D9E823 /* Main.storyboard */,
 				DF22D8721E8AFE4100D9E823 /* LaunchScreen.storyboard */,
+				DF22D86D1E8AFE4100D9E823 /* Main.storyboard */,
 			);
 			name = StoryBoard;
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		DFCCB13C1E8B14E00048759B /* AppDelegate */ = {
@@ -118,15 +120,17 @@
 				DF22D8691E8AFE4100D9E823 /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		DFCCB13D1E8B14F00048759B /* configData */ = {
 			isa = PBXGroup;
 			children = (
-				DF22D8751E8AFE4100D9E823 /* Info.plist */,
 				DF22D87B1E8AFF6100D9E823 /* GoogleService-Info.plist */,
+				DF22D8751E8AFE4100D9E823 /* Info.plist */,
 			);
 			name = configData;
+			path = configData;
 			sourceTree = "<group>";
 		};
 		DFCCB13E1E8B14FD0048759B /* Resources */ = {
@@ -135,6 +139,7 @@
 				DF22D8701E8AFE4100D9E823 /* Assets.xcassets */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +282,7 @@
 				DF22D86E1E8AFE4100D9E823 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		DF22D8721E8AFE4100D9E823 /* LaunchScreen.storyboard */ = {
@@ -285,6 +291,7 @@
 				DF22D8731E8AFE4100D9E823 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -390,7 +397,7 @@
 			baseConfigurationReference = DE54CEF5EFE2C22C0B8446D9 /* Pods-FirebaseWithLoveJacin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FirebaseWithLoveJacin/Info.plist;
+				INFOPLIST_FILE = FirebaseWithLoveJacin/configData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JoseJacin.FirebaseWithLoveJacin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,7 +410,7 @@
 			baseConfigurationReference = 54168249113BB020FF1D5D67 /* Pods-FirebaseWithLoveJacin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FirebaseWithLoveJacin/Info.plist;
+				INFOPLIST_FILE = FirebaseWithLoveJacin/configData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JoseJacin.FirebaseWithLoveJacin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
