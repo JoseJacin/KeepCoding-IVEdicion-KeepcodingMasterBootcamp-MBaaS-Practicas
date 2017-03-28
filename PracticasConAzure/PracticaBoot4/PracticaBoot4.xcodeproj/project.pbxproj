@@ -43,6 +43,7 @@
 		5D931D041E83F773005051E9 /* AuthorPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPostList.swift; sourceTree = "<group>"; };
 		5D931D061E83F7BA005051E9 /* NewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
 		DF1F8BAC1E8496E900446C3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DF22D85C1E8AEFC400D9E823 /* PracticaBoot4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PracticaBoot4.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		5D931CE41E83EEEA005051E9 /* PracticaBoot4 */ = {
 			isa = PBXGroup;
 			children = (
+				DF22D85C1E8AEFC400D9E823 /* PracticaBoot4.entitlements */,
 				DF1F8BAB1E8496E000446C3E /* Utils */,
 				5D8F3B9D1E843C30004DB370 /* Azure frameworks */,
 				5D931CF71E83F069005051E9 /* AppDelegate */,
@@ -208,6 +210,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8Z8X9YVPSZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -367,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PracticaBoot4/PracticaBoot4.entitlements;
 				DEVELOPMENT_TEAM = 8Z8X9YVPSZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PracticaBoot4/PracticaBoot4.entitlements;
 				DEVELOPMENT_TEAM = 8Z8X9YVPSZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
