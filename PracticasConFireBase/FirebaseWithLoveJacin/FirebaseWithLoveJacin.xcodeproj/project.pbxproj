@@ -96,9 +96,9 @@
 		DFCCB13A1E8B14AE0048759B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DFCCB1381E8B14920048759B /* LoginViewController.swift */,
-				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
 				DF22D86B1E8AFE4100D9E823 /* ViewController.swift */,
+				DFCCB1361E8B0A3C0048759B /* SecondViewController.swift */,
+				DFCCB1381E8B14920048759B /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

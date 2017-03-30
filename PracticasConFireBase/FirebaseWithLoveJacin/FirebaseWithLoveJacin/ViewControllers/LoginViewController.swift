@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
         case toSignIn = "Registrar nuevo usuario"
     }
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,16 +38,33 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Se añade un listener de autenticación
+        
+        
+        // Se añade un listener de autenticación para hacer Login
         handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             print("El mail del usuario logado \(user?.email ?? "")")
         })
     }
     
     //MARK: - Actions
+    // Acción que se ejecuta cuando se pulsa el botón Login
     @IBAction func doLogin(_ sender: Any) {
         // Se muestra el Dialog de Login
         showUserLoginDialog(withCommand: login, userAction: .toLogin)
+    }
+
+    // Acción que se ejecuta cuando se pulsa el botón Login
+    @IBAction func doLogout(_ sender: Any) {
+        // Se valida si hay un usuario logado
+        if let _ = FIRAuth.auth()?.currentUser {
+            // Hay un usuario logado, por lo que se procede a hacer el Logout
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch let error {
+                // Algo ha ido mal
+                print(error)
+            }
+        }
     }
     
     //MARK: - Functions
@@ -115,7 +133,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
