@@ -15,12 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
+    //MARK: - Init
+    override init() {
+        FIRApp.configure()
+    }
+    
     //MARK: - Lyfecycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Se levanta el Singleton de Firebase. Se levanta el cliente de Firebase
-        FIRApp.configure()
+        //FIRApp.configure()
         
         // Se asocia el ID de cliente de Firebase al ID de Cliente de GoogleID
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
