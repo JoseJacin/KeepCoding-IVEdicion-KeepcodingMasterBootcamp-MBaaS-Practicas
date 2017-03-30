@@ -74,6 +74,14 @@ class LoginViewController: UIViewController {
         })
     }
     
+    // Acción que se ejecuta cuando se pulsa el botón Login con Google
+    @IBAction func doLoginWithGoogle(_ sender: Any) {
+        // Se comprueba si hay un usuario logado y si lo hay, se desloguea
+        makeLogout()
+        
+        
+    }
+    
     //MARK: - Functions
     // Función que realiza el Login del usuario. Si este no existe, lo crea
     fileprivate func login(_ name: String, andPass pass: String) {

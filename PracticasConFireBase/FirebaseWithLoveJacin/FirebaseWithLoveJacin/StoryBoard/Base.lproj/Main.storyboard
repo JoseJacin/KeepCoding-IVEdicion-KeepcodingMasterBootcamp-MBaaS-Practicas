@@ -137,6 +137,14 @@
                                     <action selector="doAnonimo:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="p7I-Us-lwq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njg-t6-TGP">
+                                <rect key="frame" x="127" y="568" width="120" height="30"/>
+                                <state key="normal" title="Login con Google"/>
+                                <connections>
+                                    <action selector="doAnonimo:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="ebT-LX-WLX"/>
+                                    <action selector="doLoginWithGoogle:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="Aad-du-qAL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,6 +156,8 @@
                             <constraint firstItem="QLS-00-sB0" firstAttribute="leading" secondItem="EZq-mU-0rO" secondAttribute="trailing" constant="93" id="Kec-AF-rJD"/>
                             <constraint firstItem="QLS-00-sB0" firstAttribute="leading" secondItem="oJl-RO-ISK" secondAttribute="trailing" priority="999" constant="248" id="MGC-OX-VKh"/>
                             <constraint firstItem="EZq-mU-0rO" firstAttribute="top" secondItem="W6y-J5-X2m" secondAttribute="bottom" constant="573" id="O3W-CL-0x9"/>
+                            <constraint firstItem="njg-t6-TGP" firstAttribute="centerX" secondItem="EZq-mU-0rO" secondAttribute="centerX" id="O6q-5y-ghg"/>
+                            <constraint firstItem="EZq-mU-0rO" firstAttribute="top" secondItem="njg-t6-TGP" secondAttribute="bottom" constant="39" id="OVg-Xb-cbk"/>
                             <constraint firstItem="oJl-RO-ISK" firstAttribute="leading" secondItem="c2p-5T-TAk" secondAttribute="leadingMargin" id="Vbl-tW-tAv"/>
                         </constraints>
                     </view>
@@ -165,7 +175,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7OY-Yr-mrC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GaP-AU-9R9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GaP-AU-9R9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -183,7 +193,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASb-CK-Oaa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="irk-uN-GGI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="irk-uN-GGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
