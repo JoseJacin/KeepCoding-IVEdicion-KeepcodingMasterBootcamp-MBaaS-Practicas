@@ -8,11 +8,22 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
+    //MARK: - Outlets
+    @IBOutlet weak var googleBtnSignIn: GIDSignInButton!
+    @IBOutlet weak var photoUserProfile: UIImageView!
+    
     //MARK: - Properties
     var handle: FIRAuthStateDidChangeListenerHandle!
+    var urlPhoto: URL! {
+        // Cuando se cambie el valor
+        didSet {
+            downloadPicture(url: urlPhoto)
+        }
+    }
     
     //MARK: - Typealias
     typealias actionUserCmd = (_ : String, _ : String) -> Void
@@ -28,6 +39,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Se indica que el botón de Login con Google va a ser el que tenga el control del delegado de GoogleID
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +51,11 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        
         // Se añade un listener de autenticación para hacer Login
         handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            print("El mail del usuario logado \(user?.email ?? "")")
+            print("******* El mail del usuario logado es:\(user?.email ?? "")")
+            // Se obtiene la información del usuario
+            self.getUserInfo(user)
         })
     }
     
@@ -75,11 +88,9 @@ class LoginViewController: UIViewController {
     }
     
     // Acción que se ejecuta cuando se pulsa el botón Login con Google
-    @IBAction func doLoginWithGoogle(_ sender: Any) {
-        // Se comprueba si hay un usuario logado y si lo hay, se desloguea
-        makeLogout()
-        
-        
+    @IBAction func googleBtnAction(_ sender: Any) {
+        // Se dispara el flujo de Google con GoogleID
+        GIDSignIn.sharedInstance().signIn()
     }
     
     //MARK: - Functions
@@ -112,7 +123,10 @@ class LoginViewController: UIViewController {
         if let _ = FIRAuth.auth()?.currentUser {
             // Hay un usuario logado, por lo que se procede a hacer el Logout
             do {
+                // Se hace Logout de Firebase
                 try FIRAuth.auth()?.signOut()
+                // Se hace Logout de GoogleID
+                GIDSignIn.sharedInstance().signOut()
             } catch let error {
                 // Algo ha ido mal
                 print(error)
@@ -158,6 +172,35 @@ class LoginViewController: UIViewController {
         
         // Se muestra la alerta
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // Método que obtiene parte de la información del usuario Logado
+    func getUserInfo(_ user: FIRUser!) {
+        // Se comprueba que el usuario no llegue vacío y no sea un usuario anónimo
+        if let _ = user, !user.isAnonymous {
+            // El usuario es correcto
+            // Se obtiene el ID del usuario
+            let uid = user.uid
+            print(uid)
+            // Se obtiene el eMail del usuario
+            let userDisplay = user.displayName
+            self.title = userDisplay
+            // Se consulta si el usuario tiene foto de perfil
+            if let picProfile = user.photoURL as URL! {
+                // Se sincroniza la imagen con la vista para mostrarla
+                self.urlPhoto = picProfile
+            }
+        }
+    }
+    
+    func downloadPicture(url: URL) {
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            if let response = data {
+                DispatchQueue.main.async {
+                    self.photoUserProfile?.image = UIImage(data: response)
+                }
+            }
+        }).resume()
     }
     
     // MARK: - Navigation

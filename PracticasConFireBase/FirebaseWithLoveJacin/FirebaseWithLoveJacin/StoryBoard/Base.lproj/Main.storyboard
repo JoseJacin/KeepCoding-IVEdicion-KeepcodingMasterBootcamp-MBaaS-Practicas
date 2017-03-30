@@ -110,7 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-RO-ISK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-RO-ISK">
                                 <rect key="frame" x="16" y="637" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="h4U-ro-wNP"/>
@@ -120,7 +120,7 @@
                                     <action selector="doLogin:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="thz-TT-pW6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLS-00-sB0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLS-00-sB0">
                                 <rect key="frame" x="311" y="637" width="48" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eq4-Rx-LbN"/>
@@ -141,10 +141,16 @@
                                 <rect key="frame" x="127" y="568" width="120" height="30"/>
                                 <state key="normal" title="Login con Google"/>
                                 <connections>
-                                    <action selector="doAnonimo:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="ebT-LX-WLX"/>
-                                    <action selector="doLoginWithGoogle:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="Aad-du-qAL"/>
+                                    <action selector="googleBtnAction:" destination="aIF-Mq-nOO" eventType="touchUpInside" id="L2M-3m-W8g"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x4p-fW-ZIZ">
+                                <rect key="frame" x="162" y="72" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4CJ-kW-zMV"/>
+                                    <constraint firstAttribute="width" constant="50" id="acA-fX-SZc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -159,10 +165,14 @@
                             <constraint firstItem="njg-t6-TGP" firstAttribute="centerX" secondItem="EZq-mU-0rO" secondAttribute="centerX" id="O6q-5y-ghg"/>
                             <constraint firstItem="EZq-mU-0rO" firstAttribute="top" secondItem="njg-t6-TGP" secondAttribute="bottom" constant="39" id="OVg-Xb-cbk"/>
                             <constraint firstItem="oJl-RO-ISK" firstAttribute="leading" secondItem="c2p-5T-TAk" secondAttribute="leadingMargin" id="Vbl-tW-tAv"/>
+                            <constraint firstItem="x4p-fW-ZIZ" firstAttribute="centerX" secondItem="c2p-5T-TAk" secondAttribute="centerX" id="fUg-by-vX6"/>
+                            <constraint firstItem="x4p-fW-ZIZ" firstAttribute="top" secondItem="W6y-J5-X2m" secondAttribute="bottom" constant="8" id="jlw-Qq-Ztl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MUd-xf-qd1"/>
                     <connections>
+                        <outlet property="googleBtnSignIn" destination="njg-t6-TGP" id="tRK-zf-yir"/>
+                        <outlet property="photoUserProfile" destination="x4p-fW-ZIZ" id="7BR-ul-qcg"/>
                         <segue destination="7OY-Yr-mrC" kind="show" identifier="launchWithLogged" id="fhI-Xp-zkw"/>
                     </connections>
                 </viewController>
