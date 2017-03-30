@@ -55,16 +55,23 @@ class LoginViewController: UIViewController {
 
     // Acción que se ejecuta cuando se pulsa el botón Login
     @IBAction func doLogout(_ sender: Any) {
-        // Se valida si hay un usuario logado
-        if let _ = FIRAuth.auth()?.currentUser {
-            // Hay un usuario logado, por lo que se procede a hacer el Logout
-            do {
-                try FIRAuth.auth()?.signOut()
-            } catch let error {
-                // Algo ha ido mal
-                print(error)
+        // Se comprueba si hay un usuario logado y si lo hay, se desloguea
+        makeLogout()
+    }
+    
+    // Acción que se ejecuta cuando se pulsa el botón Anómino
+    @IBAction func doAnonimo(_ sender: Any) {
+        // Se comprueba si hay un usuario logado y si lo hay, se desloguea
+        makeLogout()
+        
+        // Se loguea con un usuario Anónimo
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            if let _ = error {
+                print("Ha ocurrido un error al loguearse con un usuario Anónimo")
+                return
             }
-        }
+            print(user?.uid ?? "")
+        })
     }
     
     //MARK: - Functions
@@ -90,6 +97,19 @@ class LoginViewController: UIViewController {
             }
             print("user: \(user?.email! ?? "")")
         })
+    }
+    
+    fileprivate func makeLogout() {
+        // Se valida si hay un usuario logado
+        if let _ = FIRAuth.auth()?.currentUser {
+            // Hay un usuario logado, por lo que se procede a hacer el Logout
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch let error {
+                // Algo ha ido mal
+                print(error)
+            }
+        }
     }
     
     // Método que captura las credenciales del usuario
